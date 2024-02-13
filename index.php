@@ -8,7 +8,27 @@
 </head>
 <body>
     <?php
-        
+        function moveZeros(array $items)
+        {
+            $new_items = [];
+            $count_null = 0;
+            foreach($items as $var){
+                if(empty($items)){
+                    return [];
+                } else if(is_bool($var) || is_null($var)){
+                    $new_items[] = $var;
+                } else if ($var == 0){
+                    $count_null += 1;
+                } else{
+                    $new_items[] = $var;
+                }
+            }
+            for ($i = 0; $i < $count_null; $i++){
+                $new_items[] = 0;
+            }
+            print_r($new_items);
+        }
+        moveZeros([]);
     ?>
 </body>
 </html>
