@@ -8,7 +8,24 @@
 </head>
 <body>
     <?php
-        
+        function tribonacci($signature, $n) {
+            $new_arr = [];
+            if($n == 0){
+                return [];
+            } else if($n == 1){
+                return [$signature[0]];
+            } else if($n == 2){
+                return [$signature[0], $signature[1]];
+            } else if ($n == 3){
+                return $signature;
+            } else{
+                $new_arr = $signature;
+                for($i = 3; $i < $n; $i++){
+                    $new_arr[$i] = $new_arr[$i - 3] + $new_arr[$i - 2] + $new_arr[$i - 1];
+                }
+                return $new_arr;
+            }
+        }
     ?>
 </body>
 </html>
