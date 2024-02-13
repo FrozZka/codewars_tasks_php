@@ -8,7 +8,22 @@
 </head>
 <body>
     <?php
-        
+        function productFib($prod) {
+            $arr[0] = 0;
+            $arr[1] = 1;
+            $i = 1;
+
+            while(($arr[$i - 1] * $arr[$i]) < $prod){
+                $arr[] = $arr[$i - 1] + $arr[$i];
+                $i++;
+            }
+
+            if (($arr[$i - 1] * $arr[$i]) == $prod){
+                return([$arr[$i - 1], $arr[$i], true]);
+            } else{
+                return ([$arr[$i - 1], $arr[$i], false]);
+            }
+        }
     ?>
 </body>
 </html>
